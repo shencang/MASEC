@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MusicPlayer</string>
+    <string name="title">标题</string>
+    <string name="text_summery">摘要</string>
+    <string name="notification">通知</string>
+    <string name="simpleNotification">简单通知</string>
+    <string name="actionNotification">带Action按钮通知</string>
+    <string name="remoteInputNotification">带快速回复功能通知</string>
+    <string name="bigPictureStyleNotification">大图效果通知</string>
+    <string name="bigTextStyleNotification">多文字效果通知</string>
+    <string name="inboxStyleNotification">信箱效果通知</string>
+    <string name="mediaStyleNotification">媒体效果通知</string>
+    <string name="messagingStyleNotification">信息效果通知</string>
+    <string name="progressViewNotification">带进度条通知</string>
+    <string name="customHeadsUpViewNotification">自定义顶部提醒视图通知</string>
+    <string name="customViewNotification">自定义视图通知</string>
+    <string name="clearAllNotification">清除所有通知</string>
+    <string name="launchNotification">从通知到达</string>
+    <string name="channel_critical">Critical events</string>
+    <string name="channel_importance">Importance events</string>
+    <string name="channel_default">Default events</string>
+    <string name="channel_low">Low events</string>
+    <string name="channel_media">Media events</string>
+</resources>

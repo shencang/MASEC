@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.MainActivity">
+
+    <LinearLayout
+        android:paddingTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg">
+
+        <ImageView
+            android:id="@+id/stopBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/stop"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/playBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/play"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/songNaneTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="歌名"
+                android:textSize="24sp"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/authorTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="歌手"
+                android:textSize="24sp"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="改进：修改一些播放错误"
+        android:textSize="24sp"/>
+
+
+</LinearLayout>
