@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ServiceLifeCircle</string>
+    <string name="myServiceMessage">测试</string>
+    <string name="topTV">测试服务</string>
+    <string name="start_service">启动Service</string>
+    <string name="stop_service">结束Service</string>
+    <string name="bind_service">绑定Service</string>
+    <string name="unbind_service">解绑Service</string>
+    <string name="channel_media">media</string>
+    <string name="channel_critical">critical</string>
+    <string name="channel_importance">importance</string>
+    <string name="channel_default">default</string>
+    <string name="channel_low">low</string>
+</resources>

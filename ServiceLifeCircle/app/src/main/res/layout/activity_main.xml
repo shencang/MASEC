@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/background"
+    tools:context=".MainActivity">
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/topTV"
+        android:layout_gravity="center"
+        android:textSize="50sp"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+    android:id="@+id/startBtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/start_service"/>
+    <Button
+        android:id="@+id/stopBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_service"/>
+
+    <Button
+        android:id="@+id/bindBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bind_service"/>
+    <Button
+        android:id="@+id/unBindBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/unbind_service"/>
+
+    android:text="@string/bind_service"/>
+    <Button
+        android:id="@+id/get_data_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取数据"/>
+
+</LinearLayout>

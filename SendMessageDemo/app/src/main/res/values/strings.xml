@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SendMessageDemo</string>
+    <string name="SMS">短信</string>
+    <string name="input_num">在这里输入手机号码：</string>
+    <string name="input_cont">在这里输入短信内容：</string>
+    <string name="seng">发送</string>
+</resources>
