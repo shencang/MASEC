@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">计算器</string>
+    <string name="caBtn_mc">MC</string>
+    <string name="caBtn_mr">MR</string>
+    <string name="ca_Btn_ms">MS</string>
+    <string name="ca_Btn_mPlus">M+</string>
+    <string name="ca_Btn_mDown">M-</string>
+    <string name="acBtn_left">←</string>
+    <string name="acBtn_ce">CE</string>
+    <string name="acBtn_c">C</string>
+    <string name="acBtn_zf">±</string>
+    <string name="acBtn_gen">√</string>
+    <string name="acBtn_7">7</string>
+    <string name="acBtn_8">8</string>
+    <string name="acBtn_9">9</string>
+    <string name="acBtn_chu">/</string>
+    <string name="acBtn_bai">%</string>
+    <string name="acBtn_4">4</string>
+    <string name="acBtn_5">5</string>
+    <string name="acBtn_6">6</string>
+    <string name="acBtn_cheng">*</string>
+    <string name="acBtn_1_x">1/x</string>
+    <string name="_1">1</string>
+    <string name="caBtn_2">2</string>
+    <string name="caBtn_3">3</string>
+    <string name="caBtnSub">-</string>
+    <string name="caBtnEqu">=</string>
+    <string name="caBtnAdd">+</string>
+    <string name="caBtnDot">.</string>
+    <string name="caBtn_0">0</string>
+</resources>

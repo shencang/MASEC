@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20sp"
+        android:minLines="8"
+        />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:ignore="UselessParent">
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/caBtn_mc" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/caBtn_mr" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/ca_Btn_ms" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/ca_Btn_mPlus" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/ca_Btn_mDown" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:ignore="UselessParent">
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_left" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_ce" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_c" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_zf" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_gen" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:ignore="UselessParent">
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_7" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_8" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_9" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_chu" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_bai" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:ignore="UselessParent">
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_4" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_5" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_6" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_cheng" />
+
+            <Button
+                style="@style/btnFirst"
+                android:text="@string/acBtn_1_x" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <Button
+            style="@style/btnFirst"
+            android:id="@+id/btn1"
+            android:text="@string/_1"
+            />
+        <Button
+            style="@style/btnFirst"
+            android:id="@+id/btn2"
+            android:text="@string/caBtn_2"
+            android:layout_toEndOf="@+id/btn1"
+            android:layout_alignTop="@+id/btn1"
+            android:layout_alignBottom="@+id/btn1"/>
+        <Button
+            android:id="@+id/btn3"
+            style="@style/btnFirst"
+            android:layout_toEndOf="@+id/btn2"
+            android:layout_alignTop="@+id/btn2"
+            android:text="@string/caBtn_3"/>
+        <Button
+            android:id="@+id/btnSub"
+            style="@style/btnFirst"
+            android:layout_toEndOf="@+id/btn3"
+            android:layout_alignTop="@+id/btn3"
+            android:text="@string/caBtnSub"/>
+        <Button
+            android:id="@+id/btnEqual"
+            style="@style/btnSec"
+            android:layout_toEndOf="@+id/btnSub"
+            android:layout_alignTop="@+id/btnSub"
+            android:text="@string/caBtnEqu"/>
+        <Button
+            android:id="@+id/btnAdd"
+            style="@style/btnFirst"
+            android:layout_toStartOf="@+id/btnEqual"
+            android:layout_alignBottom="@+id/btnEqual"
+            android:text="@string/caBtnAdd"/>
+        <Button
+            android:id="@+id/btnDot"
+            style="@style/btnFirst"
+            android:layout_toStartOf="@+id/btnAdd"
+            android:layout_alignBottom="@+id/btnAdd"
+            android:text="@string/caBtnDot"/>
+        <Button
+            style="@style/btnTre"
+            android:layout_toStartOf="@+id/btnDot"
+            android:layout_alignBottom="@+id/btnDot"
+            android:text="@string/caBtn_0"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
