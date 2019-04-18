@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/bg"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/headTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="用户登录"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:paddingBottom="50sp"
+        android:paddingTop="50sp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <TextView
+                android:text="用户名："
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/usernameET"
+                android:layout_weight="1"
+                android:hint="请输入您的用户名"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="密    码："
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/passwordET"
+                android:layout_weight="1"
+                android:hint="请输入您的密码"
+                android:textSize="24sp" />
+        </TableRow>
+        <TableRow>
+            <CheckBox
+                android:id="@+id/rememberPasswordCB"
+                android:text="忘记密码"
+                android:textSize="24sp"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:background="@drawable/button_style"
+        android:id="@+id/loginBtn"
+        android:paddingTop="20sp"
+        android:paddingBottom="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登   录"
+        android:textSize="30sp"/>
+
+</LinearLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ForceOfflineAndRememberPasswordDemo</string>
+    <string name="sendBtnText">发送强制下线广播</string>
+</resources>
