@@ -15,7 +15,8 @@ public class NotificationChannels {
     public final static String MEDIA = "media";
 
     public static void createAllNotificationChannels(Context context) {
-        NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager nm = (NotificationManager) context
+                .getSystemService(Context.NOTIFICATION_SERVICE);
 
         if(nm == null) {
             return;

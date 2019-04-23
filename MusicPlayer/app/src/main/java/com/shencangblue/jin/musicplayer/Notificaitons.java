@@ -10,6 +10,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Icon;
 import android.widget.RemoteViews;
 
+import com.shencangblue.jin.musicplayer.Activity.LaunchActivity;
+import com.shencangblue.jin.musicplayer.Activity.MainActivity;
+import com.shencangblue.jin.musicplayer.Service.NotificationService;
+
 public class Notificaitons {
     public final static int NOTIFICATION_SAMPLE = 0;
     public final static int NOTIFICATION_ACTION = 1;
@@ -31,7 +35,7 @@ public class Notificaitons {
     public final static String ACTION_INBOX_STYLE = "com.shencangblue.jin.musicplayer.ACTION_INBOX_STYLE";
     public final static String ACTION_MEDIA_STYLE = "com.shencangblue.jin.musicplayer.ACTION_MEDIA_STYLE";
     public final static String ACTION_MESSAGING_STYLE = "com.shencangblue.jin.musicplayer.ACTION_MESSAGING_STYLE";
-    public final static String ACTION_PROGRESS = "com.shencangblue.jin.nmusicplayer.ACTION_PROGRESS";
+    public final static String ACTION_PROGRESS = "com.shencangblue.jin.musicplayer.ACTION_PROGRESS";
     public final static String ACTION_CUSTOM_HEADS_UP_VIEW = "com.shencangblue.jin.musicplayer.ACTION_CUSTOM_HEADS_UP_VIEW";
     public final static String ACTION_CUSTOM_VIEW = "com.shencangblue.jin.musicplayer.ACTION_CUSTOM_VIEW";
     public final static String ACTION_CUSTOM_VIEW_OPTIONS_LOVE = "com.shencangblue.jin.musicplayer.ACTION_CUSTOM_VIEW_OPTIONS_LOVE";
@@ -399,7 +403,7 @@ public class Notificaitons {
 
     public void sendCustomHeadsUpViewNotification(Context context, NotificationManager nm) {
         //创建点击通知时发送的广播
-        Intent intent = new Intent(context, LaunchActivity.class);
+        Intent intent = new Intent(context, MainActivity.class);
         PendingIntent pi = PendingIntent.getActivity(context, 0, intent, 0);
         //创建自定义顶部提醒视图
         Intent answerIntent = new Intent(context, NotificationService.class);
@@ -437,28 +441,55 @@ public class Notificaitons {
 
     public void sendCustomViewNotification(Context context, NotificationManager nm, NotificationContentWrapper content, Boolean isLoved, Boolean isPlaying) {
         //创建点击通知时发送的广播
-        Intent intent = new Intent(context, LaunchActivity.class);
-        PendingIntent pi = PendingIntent.getActivity(context, 0, intent, 0);
+        Intent intent = new Intent(context, MainActivity.class);
+        PendingIntent pi = PendingIntent.getActivity(context,
+                0,
+                intent,
+                0);
         //创建各个按钮的点击响应广播
         Intent intentLove = new Intent(context, NotificationService.class);
         intentLove.setAction(ACTION_CUSTOM_VIEW_OPTIONS_LOVE);
-        PendingIntent piLove = PendingIntent.getService(context, 0, intentLove, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent piLove = PendingIntent.
+                getService(
+                        context,
+                        0,
+                        intentLove,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
 
         Intent intentPre = new Intent(context, NotificationService.class);
         intentPre.setAction(ACTION_CUSTOM_VIEW_OPTIONS_PRE);
-        PendingIntent piPre = PendingIntent.getService(context, 0, intentPre, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent piPre = PendingIntent
+                .getService(
+                        context,
+                        0,
+                        intentPre,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
 
         Intent intentPlayOrPause = new Intent(context, NotificationService.class);
         intentPlayOrPause.setAction(ACTION_CUSTOM_VIEW_OPTIONS_PLAY_OR_PAUSE);
-        PendingIntent piPlayOrPause = PendingIntent.getService(context, 0, intentPlayOrPause, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent piPlayOrPause = PendingIntent.
+                getService(
+                        context,
+                        0,
+                        intentPlayOrPause,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Intent intentNext = new Intent(context, NotificationService.class);
+        Intent intentNext = new Intent(context,
+                NotificationService.class);
         intentNext.setAction(ACTION_CUSTOM_VIEW_OPTIONS_NEXT);
-        PendingIntent piNext = PendingIntent.getService(context, 0, intentNext, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent piNext = PendingIntent.
+                getService(context,
+                        0,
+                        intentNext,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
 
         Intent intentLyrics = new Intent(context, NotificationService.class);
         intentLyrics.setAction(ACTION_CUSTOM_VIEW_OPTIONS_LYRICS);
-        PendingIntent piLyrics = PendingIntent.getService(context, 0, intentLyrics, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent piLyrics = PendingIntent.getService(
+                context,
+                0,
+                intentLyrics,
+                PendingIntent.FLAG_UPDATE_CURRENT);
 
         Intent intentCancel = new Intent(context, NotificationService.class);
         intentCancel.setAction(ACTION_CUSTOM_VIEW_OPTIONS_CANCEL);

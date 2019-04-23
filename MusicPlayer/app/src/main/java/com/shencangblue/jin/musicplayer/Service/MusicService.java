@@ -19,7 +19,7 @@ public class MusicService extends Service {
     int status = 0x11;
     private MediaPlayer mediaPlayer;
     private AssetManager assetManager;
-    private String []musics = new String[]{"","hb.mp3","wows.mp3"};
+    private String []musics = new String[]{"an.mp3","hb.mp3","wows.mp3"};
     //当前正在播放的歌曲的对应的索引值
     int current=0;
     private  ServiceReceiver serviceReceiver;
@@ -95,6 +95,7 @@ public class MusicService extends Service {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 current++;
+
                 if (current>=3){
                     current =0;
                 }
@@ -103,6 +104,7 @@ public class MusicService extends Service {
                 intent.putExtra("current",current);
                 sendBroadcast(intent);
                 prepareAndPlay(musics[current]);
+
             }
         });
 

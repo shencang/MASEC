@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +17,7 @@ import com.shencangblue.jin.musicplayer.Notificaitons;
 import com.shencangblue.jin.musicplayer.NotificationContentWrapper;
 import com.shencangblue.jin.musicplayer.Service.MusicService;
 import com.shencangblue.jin.musicplayer.R;
+import com.shencangblue.jin.musicplayer.Service.NotificationService;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView stopBtn, playBtn;
@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
     private int status= 0x11;
     //当前正在播放的歌曲的对应的索引值
     private int current= 0;
-    private  String []someName = new String[]{
+    public static  String []someName = new String[]{
             "TearVid-Long mix"
             ,"君だったら"
             ,"World of Warships OST 79"};
-    private  String[]authors = new String[]{
+    public static  String[]authors = new String[]{
             "HAPPY BIRTHDAY"
             ,"VicetoneCozi Zuehlsdorff",
             "Various Artists"};
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         mContext = this;
         mNM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
 
         stopBtn = (ImageView) findViewById(R.id.stopBtn);
         playBtn = (ImageView) findViewById(R.id.playBtn);
@@ -66,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MainActivity.this, MusicService.class);
         startService(intent);
+        Intent intent1 = new Intent(MainActivity.this, NotificationService.class);
+        startService(intent1);
 
 
 
@@ -82,6 +85,16 @@ public class MainActivity extends AppCompatActivity {
             if (current>=0&&current<3){
                 songNameTv.setText(someName[current]);
                 authorTv.setText(authors[current]);
+                Notificaitons.getInstance().sendCustomViewNotification(
+                        mContext,
+                        mNM,
+                        new NotificationContentWrapper(
+                                BitmapFactory.decodeResource(mContext.getResources(),
+                                        R.mipmap.custom_view_picture_current),
+                                someName[current],
+                                authors[current]+"-"+someName[current]),
+                        false,
+                        true);
 
             }
             switch (status){
@@ -111,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.playBtn: {
                     intent.putExtra("control", 1);
                     //playBtn.setImageIcon(Icon.createWithResource(MainActivity.this.toString(),R.drawable.pause));
+
                     break;
                 }
                 case R.id.stopBtn: {
