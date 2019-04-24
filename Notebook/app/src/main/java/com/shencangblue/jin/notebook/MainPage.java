@@ -1,157 +1,84 @@
 package com.shencangblue.jin.notebook;
 
+package com.hb.system.activity;
+
+import java.util.List;
+
 import android.annotation.SuppressLint;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.SimpleCursorAdapter;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import com.example.studentinformationsystem.R;
+import com.hb.bean.Student;
+import com.hb.dao.SqlDao;
 
-public class MainActivity extends AppCompatActivity {
-    private EditText themeET, contentET, dateET;
-    private Button chooseDateBtn, addBtn, queryBtn;
-    private ListView reslutLV;
-    private LinearLayout titleLL;
-    private MyDataBaseHelper myDataBaseHelper;
-    private SQLServer server;
-    private List<Note>allNotes;
-    private Note newNote;
+public class MainPage extends Activity implements  OnCheckedChangeListener {
+    private EditText et_name;
+    private Button bt_add;
+    private String name;
+    private RadioGroup rg_group;
+    private TextView tv_showsex;
+    private String showsex;
+    private SQLServer dao;
+    private Student stu;
+    private Student stu2;
+    private List<Student> list;
+    private MyAdapter adapter;
+    private ListView listView1;
+    private PopupWindow pw;
+    private TextView delete;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.mainpage);
         initView();
-        initData();
-
+        initDate();
 
     }
+    //初始化视图
     private void initView() {
-        themeET = (EditText) findViewById(R.id.themeET);
-        contentET = (EditText) findViewById(R.id.contentET);
-        dateET = (EditText) findViewById(R.id.dateET);
-        chooseDateBtn = (Button) findViewById(R.id.chooseDateBtn);
-        addBtn = (Button) findViewById(R.id.addBtn);
-        queryBtn = (Button) findViewById(R.id.queryBtn);
-        reslutLV = (ListView) findViewById(R.id.resultLV);
-        titleLL = (LinearLayout) findViewById(R.id.titleLL);
+        et_name=(EditText) findViewById(R.id.et_name);
+        bt_add=(Button) findViewById(R.id.bt_add);
+        rg_group=(RadioGroup) findViewById(R.id.rg_group);
+        tv_showsex=(TextView) findViewById(R.id.tv_showsex);
+        listView1=(ListView) findViewById(R.id.listView1);
     }
-
-
-    private void initData() {
-        server = new SQLServer(MainActivity.this);
-        allNotes = server.findAll();
-
-        chooseDateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar calendar = Calendar.getInstance();
-                new DatePickerDialog(
-                        MainActivity.this
-                        , new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        month++;
-                        dateET.setText(String.format("%d-%d-%d", new Object[]{year, month, dayOfMonth}));
-                    }
-                },
-                        calendar.get(Calendar.YEAR),
-                        calendar.get(Calendar.MONTH),
-                        calendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
-
-
-        MyListener myListener = new MyListener();
-        addBtn.setOnClickListener(myListener);
-        queryBtn.setOnClickListener(myListener);
-    }
-
-
-
-    private class MyListener implements View.OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            String themeStr = themeET.getText().toString().trim();
-            String contentStr = contentET.getText().toString().trim();
-            String dateStr = dateET.getText().toString().trim();
-            switch (v.getId()) {
-                case R.id.addBtn: {
-                    titleLL.setVisibility(View.INVISIBLE);
-                    if(TextUtils.isEmpty(themeStr) || TextUtils.isEmpty(contentStr)||TextUtils.isEmpty(dateStr)){
-                        Toast.makeText(MainActivity.this, "添加信息不能为空", Toast.LENGTH_LONG).show();
-
-                    }else{
-                        newNote =new Note(themeStr,contentStr,dateStr);
-                        Note findNote =server.findName(newNote);
-                        if(themeStr.equals(findNote.getTheme())){
-                            Toast.makeText(MainActivity.this, "添加的主题名不能一样！", Toast.LENGTH_SHORT).show();
-
-                        }else{
-                            boolean add = server.add(newNote);
-                            if(add){
-                                allNotes=server.findAll();
-                                Toast.makeText(MainActivity.this, "添加成功", Toast.LENGTH_SHORT).show();
-                            }else {
-                                Toast.makeText(MainActivity.this, "添加失败", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
-
-
-                    //额外添加
-
-                    break;
-                }
-                case R.id.queryBtn: {
-                    titleLL.setVisibility(View.VISIBLE);
-
-
-                    break;
-                }
-            }
-        }
-
-    }
-
-
     //初始化数据
     private void initDate() {
-        adapter=new MainPage.MyAdapter();
+        dao=new SQLServer(MainPage.this);
+        list=dao.findAll();
+        adapter=new MyAdapter();
         listView1.setAdapter(adapter);
         rg_group.setOnCheckedChangeListener(this);
-        bt_add.setOnClickListener(new View.OnClickListener() {
+        bt_add.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -184,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * listview的条目点击事件
          */
-        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView1.setOnItemClickListener(new OnItemClickListener() {
             private String na;
 
             @Override
@@ -200,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 int [] location=new int[2];
                 view.getLocationInWindow(location);
                 pw.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                pw.showAtLocation(parent, Gravity.RIGHT+ Gravity.TOP, 20,location[1]-5 );//设置显示的位置
+                pw.showAtLocation(parent,Gravity.RIGHT+ Gravity.TOP, 20,location[1]-5 );//设置显示的位置
                 ScaleAnimation animation = new ScaleAnimation(0.3f, 1f, 0.3f, 1f, Animation.RELATIVE_TO_SELF,
                         Animation.RELATIVE_TO_SELF);//弹出的动画
                 animation.setDuration(400);//设置动画时间
@@ -209,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 /**
                  * 删除每一个item上的数据
                  */
-                delete.setOnClickListener(new View.OnClickListener() {
+                delete.setOnClickListener(new OnClickListener() {
 
                     @Override
                     public void onClick(View v) {
@@ -226,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
          * listview的滑动监听
          * 当鼠标上下滑动的时候让PopupWindow消失
          */
-        listView1.setOnScrollListener(new AbsListView.OnScrollListener() {
+        listView1.setOnScrollListener(new OnScrollListener() {
 
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -252,17 +179,17 @@ public class MainActivity extends AppCompatActivity {
         //更新文本内容，以符合选中项
         tv_showsex.setText(rb.getText());
     }
-    class MyAdapter extends BaseAdapter {
+    class MyAdapter extends BaseAdapter{
 
         private String sex2;
         private View view;
         private String name2;
         @SuppressLint("ViewHolder") @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            MainPage.ViewHolder holder=null ;//设置静态类使其初始化
+            ViewHolder holder=null ;//设置静态类使其初始化
             if(convertView==null){
 
-                holder = new MainPage.ViewHolder();//创建holder对象
+                holder = new ViewHolder();//创建holder对象
                 view = View.inflate(MainPage.this, R.layout.item,null );
 
                 holder.iv_head = (ImageView) view.findViewById(R.id.iv_head);
@@ -272,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                 view.setTag(holder);//用来保存一些数据结构。
             }else{
                 view=convertView;//复用历史缓存
-                holder=(MainPage.ViewHolder) view.getTag();
+                holder=(ViewHolder) view.getTag();
 
             }
             name2 = list.get(position).getName();
@@ -313,8 +240,4 @@ public class MainActivity extends AppCompatActivity {
         TextView tv_sex;
     }
 
-
-
-
 }
-
