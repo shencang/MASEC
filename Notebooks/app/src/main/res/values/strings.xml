@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Notebooks-94239</string>
+    <string name="nameTitleTv">备忘录</string>
+    <string name="theme">主题</string>
+    <string name="content">内容</string>
+    <string name="chooseDate">选择时间</string>
+    <string name="add">添加</string>
+    <string name="query">查询</string>
+    <string name="id">编号</string>
+    <string name="date">时间</string>
+    <string name="modify">修改</string>
+    <string name="id_mh">编号：</string>
+    <string name="theme_mh">主题：</string>
+    <string name="content_mh">内容：</string>
+    <string name="date_mh">时间：</string>
+    <string name="care">详情</string>
+    <string name="delete">删除</string>
+</resources>

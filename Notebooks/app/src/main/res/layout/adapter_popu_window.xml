@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:background="@drawable/ic_launcher_background"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/tv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/tv_care"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/care"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/tv_modify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modify"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+</LinearLayout>
