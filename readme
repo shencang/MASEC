@@ -26,9 +26,9 @@
    > 文本编辑器
    * MusicPlayer
    > 音乐播放器，调用系统功能
-   * Notebook
+   * Notebook（不完善，已删除）
    > 带数据库的备忘录
-   * Notebook_plus
+   * Notebook_plus（不完善，已删除）
    > 带数据库的备忘录,改版。记得删除mainpage。
    * Notebooks
    > 完善的使用SQLlife数据库，完善的增删改查操作。附带ui更新
