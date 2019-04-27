@@ -3,25 +3,25 @@
 
 ## 项目目录： 
    * AsynctaskDownloadDemo_94239
-   >
+   > 下载进度条监听demo
    * CalculatorDemo
-   >
+   > 特殊demo
    * ForceOfflineAndRememberPasswordDemo
-   >
+   > 密码记忆登录demo
    * HandleDemo
-   >
+   > 随机数的ui显示demo
    * IntentDemo
-   >
+   > 活动跳转的demo
    * MusicPlayer
-   >
+   > 音乐播放器的demo
    * NotificationDemo
-   >
+   > 同志学习的demo
    * SendMessageDemo
-   >
+   > 发送消息短信
    * ServiceLifeCircle
    > 服务功能等
    * TextAct
-   > 
+   > 文本调整demo
    * TextEditorDemo
    > 文本编辑器
    * MusicPlayer
