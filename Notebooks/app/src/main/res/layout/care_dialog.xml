@@ -1,63 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@mipmap/bg2">
-    <TextView
+    android:background="@mipmap/bg2"
+    android:orientation="vertical">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/care"
-        android:textSize="40sp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="#FFFFFF"
-        />
+        android:orientation="vertical">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TableRow android:paddingTop="20sp">
-            <TextView
-                android:text="@string/id_mh"
-                android:textSize="20sp"
-                android:textColor="#ffffff"/>
-            <TextView
-                android:id="@+id/showIdTv"
-                android:textSize="20sp"
-                android:textColor="#ffffff"/>
-        </TableRow>
-        <TableRow android:paddingTop="20sp">
-            <TextView
-                android:text="@string/theme_mh"
-                android:textSize="20sp"
-                android:textColor="#ffffff"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/showThemeTv"
-                android:textColor="#ffffff"/>
-        </TableRow>
-        <TableRow android:paddingTop="20sp"
-            android:paddingBottom="200sp">
-            <TextView
-                android:text="@string/content_mh"
-                android:textSize="20sp"
-                android:textColor="#ffffff"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/showContentTv"
-                android:textColor="#ffffff"/>
-        </TableRow>
-        <TableRow android:paddingTop="20sp">
-            <TextView
-                android:text="@string/date_mh"
-                android:textSize="20sp"
-                android:textColor="#ffffff"/>
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/showDateTv"
-                android:textColor="#ffffff"/>
-        </TableRow>
-    </TableLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/care"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
 
-</LinearLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow android:paddingTop="20sp">
+
+                <TextView
+                    android:text="@string/id_mh"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/showIdTv"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+            </TableRow>
+
+            <TableRow android:paddingTop="20sp">
+
+                <TextView
+                    android:text="@string/theme_mh"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/showThemeTv"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingTop="20sp"
+                android:paddingBottom="00sp">
+
+                <TextView
+                    android:text="@string/content_mh"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/showContentTv"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+            </TableRow>
+
+            <TableRow android:paddingTop="20sp">
+
+                <TextView
+                    android:text="@string/date_mh"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/showDateTv"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+</ScrollView>

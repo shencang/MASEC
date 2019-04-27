@@ -9,7 +9,7 @@
 
         <TextView
             android:id="@+id/list_idTV"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/id"
             android:textSize="20sp"
@@ -17,7 +17,7 @@
             android:gravity="center"/>
         <TextView
             android:id="@+id/list_themeTV"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/theme"
             android:textSize="20sp"
@@ -25,7 +25,7 @@
             android:gravity="center"/>
         <TextView
             android:id="@+id/list_contentTV"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/content"
             android:textSize="20sp"
@@ -33,7 +33,7 @@
             android:gravity="center"/>
         <TextView
             android:id="@+id/list_dateTV"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/date"
             android:textSize="20sp"
