@@ -20,9 +20,9 @@
    > 发送消息短信
    * ServiceLifeCircle
    > 服务功能等
-   * TextAct
+   * TextAct(暂时关闭)
    > 文本调整demo
-   * TextEditorDemo
+   * TextEditorDemo(暂时关闭)
    > 文本编辑器
    * MusicPlayer
    > 音乐播放器，调用系统功能
