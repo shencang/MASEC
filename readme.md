@@ -15,7 +15,7 @@
    * MusicPlayer
    > 音乐播放器的demo
    * NotificationDemo
-   > 同志学习的demo
+   > 通知学习的demo
    * SendMessageDemo
    > 发送消息短信
    * ServiceLifeCircle
@@ -32,3 +32,5 @@
    > 带数据库的备忘录,改版。记得删除mainpage。
    * Notebooks
    > 完善的使用SQLlife数据库，完善的增删改查操作。附带ui更新。更新修复了ui错误。
+   * AccessContentDemo
+   > 通讯录控制demo
