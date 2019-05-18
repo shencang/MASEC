@@ -35,5 +35,5 @@
    * AccessContentDemo
    > 通讯录控制demo
    * RecyclerViewDemo
-   > RecyclerView
+   > RecyclerView的练习
    
